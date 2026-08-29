@@ -174,7 +174,7 @@ export default function Home() {
                     </div>
 
                     <a
-                        href="/Mohamed_Warith_Resume.pdf"
+                        href="https://drive.google.com/file/d/1lBlwcP7YcSJcGaBv-6gZaK8OFxzRYtL0/view?usp=sharing"
                         target="_blank"
                         rel="noreferrer"
                         className="hidden rounded-full border border-white/15 px-5 py-2.5 text-sm transition hover:border-white/40 hover:bg-white hover:text-black md:block"
@@ -274,14 +274,14 @@ export default function Home() {
                         <div className="flex gap-10 border-l border-white/10 pl-8 lg:pb-2">
                             <div>
                                 <p className="font-mono text-4xl tracking-tight">3×</p>
-                                <p className="mt-1 text-xs uppercase tracking-wider text-white/35">
+                                <p className="mt-1 text-xs uppercase tracking-wider text-white/65">
                                     ACPC Finalist
                                 </p>
                             </div>
 
                             <div>
                                 <p className="font-mono text-4xl tracking-tight">3.77</p>
-                                <p className="mt-1 text-xs uppercase tracking-wider text-white/35">
+                                <p className="mt-1 text-xs uppercase tracking-wider text-white/65">
                                     GPA / 4.0
                                 </p>
                             </div>
@@ -382,7 +382,7 @@ export default function Home() {
                         description="Where I built the foundation."
                     />
 
-                    <div className="mt-16 flex flex-col gap-8 rounded-2xl border border-white/[0.08] p-7 md:flex-row md:items-center md:justify-between md:p-10">
+                    <div className="mt-16 flex flex-col gap-8 rounded-2xl border border-white/15 p-7 md:flex-row md:items-center md:justify-between md:p-10">
                         <div className="flex gap-5">
                             <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl border border-white/10">
                                 <GraduationCap size={22} className="text-white/60" />
@@ -440,7 +440,7 @@ export default function Home() {
                         />
                     </div>
 
-                    <div className="mt-6 rounded-2xl border border-white/[0.08] p-8 md:p-10">
+                    <div className="mt-6 rounded-2xl border border-white/15 p-8 md:p-10">
                         <div className="flex items-start gap-5">
                             <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl border border-white/10">
                                 <Users size={21} className="text-white/60" />
@@ -615,7 +615,7 @@ function SectionHeader({
                 </h2>
             </div>
 
-            <p className="max-w-xs text-sm leading-6 text-white/35">
+            <p className="max-w-xs text-sm leading-6 text-white/65">
                 {description}
             </p>
         </div>
@@ -637,7 +637,7 @@ function InfoCard({
 
             <h3 className="text-lg font-medium">{title}</h3>
 
-            <p className="mt-2 text-sm leading-6 text-white/35">{text}</p>
+            <p className="mt-2 text-sm leading-6 text-white/65">{text}</p>
         </div>
     );
 }
@@ -654,7 +654,7 @@ function ProjectCard({
             rel="noreferrer"
             className={`group relative block overflow-hidden rounded-2xl border transition duration-500 ${project.featured
                 ? "border-white/15 bg-white/[0.055] hover:border-white/30"
-                : "border-white/[0.10] bg-white/[0.018] hover:border-white/25 hover:bg-white/[0.035]"
+                : "border-white/[0.10] bg-[#15171b] hover:border-white/25 hover:bg-white/[0.035]"
                 }`}
         >
             {project.featured && (
@@ -723,14 +723,14 @@ function CompetitionCard({
     rows: string[][];
 }) {
     return (
-        <div className="rounded-2xl border border-white/[0.08] p-7 md:p-10">
+        <div className="rounded-2xl border border-white/15 p-7 md:p-10">
             <div className="flex h-12 w-12 items-center justify-center rounded-xl border border-white/10">
                 <Trophy size={21} className="text-white/60" />
             </div>
 
             <h3 className="mt-7 text-3xl font-medium">{title}</h3>
 
-            <p className="mt-2 max-w-sm text-sm leading-6 text-white/35">
+            <p className="mt-2 max-w-sm text-sm leading-6 text-white/65">
                 {subtitle}
             </p>
 
