@@ -33,6 +33,7 @@ const projects = [
             "Deepgram",
             "SQL Server",
         ],
+        github: "https://github.com/MohamedWaheed327/MeetVerse",
         featured: true,
     },
     {
@@ -48,6 +49,7 @@ const projects = [
             "Parser",
             "AST",
         ],
+        github: "https://github.com/MohamedWaheed327/Tiny-Compiler",
     },
     {
         number: "03",
@@ -62,6 +64,7 @@ const projects = [
             "RBAC",
             "Clean Architecture",
         ],
+        github: "https://github.com/mwarith/Courses-API",
     },
     {
         number: "04",
@@ -70,6 +73,7 @@ const projects = [
         description:
             "A web application for tracking problems, solutions, and statistics for competitive programmers.",
         technologies: ["PHP", "MySQL", "HTML", "CSS"],
+        github: "https://github.com/mwarith/PS_Tracker",
     },
 ];
 
@@ -644,31 +648,36 @@ function ProjectCard({
     project: (typeof projects)[number];
 }) {
     return (
-        <article
-            className={`group relative overflow-hidden rounded-2xl border border-white/[0.08] transition duration-500 hover:border-white/20 ${project.featured ? "bg-white/[0.035]" : ""
+        <a
+            href={project.github}
+            target="_blank"
+            rel="noreferrer"
+            className={`group relative block overflow-hidden rounded-2xl border transition duration-500 ${project.featured
+                ? "border-white/15 bg-white/[0.055] hover:border-white/30"
+                : "border-white/[0.10] bg-white/[0.018] hover:border-white/25 hover:bg-white/[0.035]"
                 }`}
         >
             {project.featured && (
-                <div className="absolute right-6 top-6 rounded-full border border-white/10 px-3 py-1 font-mono text-[10px] uppercase tracking-widest text-white/40">
+                <div className="absolute right-6 top-6 rounded-full border border-white/15 bg-white/[0.05] px-3 py-1 font-mono text-[10px] uppercase tracking-widest text-white/55">
                     Featured
                 </div>
             )}
 
             <div className="grid gap-8 p-7 md:p-10 lg:grid-cols-[100px_1fr_auto]">
-                <span className="font-mono text-sm text-white/20">
+                <span className="font-mono text-sm text-[#b8a47a]">
                     {project.number}
                 </span>
 
                 <div>
-                    <p className="mb-2 font-mono text-xs uppercase tracking-widest text-white/30">
+                    <p className="mb-3 font-mono text-xs uppercase tracking-widest text-[#b8a47a]">
                         {project.subtitle}
                     </p>
 
-                    <h3 className="text-3xl font-medium tracking-tight md:text-4xl">
+                    <h3 className="text-3xl font-medium tracking-tight text-white transition-colors group-hover:text-[#d8c79d] md:text-4xl">
                         {project.title}
                     </h3>
 
-                    <p className="mt-5 max-w-2xl text-sm leading-7 text-white/45">
+                    <p className="mt-5 max-w-2xl text-sm leading-7 text-white/60">
                         {project.description}
                     </p>
 
@@ -676,22 +685,31 @@ function ProjectCard({
                         {project.technologies.map((technology) => (
                             <span
                                 key={technology}
-                                className="rounded-full border border-white/10 px-3 py-1.5 font-mono text-[11px] text-white/40"
+                                className="rounded-full border border-white/15 bg-white/[0.025] px-3 py-1.5 font-mono text-[11px] text-white/55"
                             >
                                 {technology}
                             </span>
                         ))}
                     </div>
+
+                    <div className="mt-8 flex items-center gap-2 text-sm text-white/45 transition-colors group-hover:text-white">
+                        <Github size={16} />
+                        View on GitHub
+                        <ArrowUpRight
+                            size={15}
+                            className="transition-transform group-hover:-translate-y-0.5 group-hover:translate-x-0.5"
+                        />
+                    </div>
                 </div>
 
-                <div className="hidden lg:block">
+                {/* <div className="hidden lg:block">
                     <ArrowUpRight
-                        size={24}
-                        className="text-white/20 transition duration-300 group-hover:-translate-y-1 group-hover:translate-x-1 group-hover:text-white/70"
+                        size={25}
+                        className="text-white/25 transition duration-300 group-hover:-translate-y-1 group-hover:translate-x-1 group-hover:text-[#d8c79d]"
                     />
-                </div>
+                </div> */}
             </div>
-        </article>
+        </a>
     );
 }
 
