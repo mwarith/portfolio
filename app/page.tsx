@@ -132,13 +132,15 @@ export default function Home() {
     };
 
     return (
-        <main className="min-h-screen overflow-x-hidden bg-[#08090b] text-[#f4f4f0] selection:bg-white selection:text-black">
+        <main className="min-h-screen overflow-x-hidden bg-[#1a1815] text-[#f5f1ed] selection:bg-amber-300 selection:text-black">\n            <style>{`\n              @keyframes fadeInUp {\n                from {\n                  opacity: 0;\n                  transform: translateY(20px);\n                }\n                to {\n                  opacity: 1;\n                  transform: translateY(0);\n                }\n              }\n              .animate-fade-in {\n                animation: fadeInUp 0.6s ease-out;\n              }\n              .group:hover .icon-shift {\n                transform: translateX(4px);\n              }\n            `}</style>
             {/* Background */}
             <div className="pointer-events-none fixed inset-0 -z-10 overflow-hidden">
-                <div className="absolute left-1/2 top-[-300px] h-[700px] w-[1000px] -translate-x-1/2 rounded-full bg-white/[0.025] blur-3xl" />
+                <div className="absolute left-1/2 top-[-300px] h-[700px] w-[1000px] -translate-x-1/2 rounded-full bg-gradient-to-b from-amber-500/[0.03] to-transparent blur-3xl" />
+
+                <div className="absolute right-[-200px] top-1/2 h-[500px] w-[500px] rounded-full bg-gradient-to-l from-orange-500/[0.02] to-transparent blur-3xl" />
 
                 <div
-                    className="absolute inset-0 opacity-[0.025]"
+                    className="absolute inset-0 opacity-[0.015]"
                     style={{
                         backgroundImage:
                             "linear-gradient(rgba(255,255,255,.5) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,.5) 1px, transparent 1px)",
@@ -148,7 +150,7 @@ export default function Home() {
             </div>
 
             {/* Navigation */}
-            <header className="fixed left-0 right-0 top-0 z-50 border-b border-white/[0.07] bg-[#08090b]/80 backdrop-blur-xl">
+            <header className="fixed left-0 right-0 top-0 z-50 border-b border-white/[0.15] bg-[#1a1815]/80 backdrop-blur-xl">
                 <nav className="mx-auto flex h-20 max-w-7xl items-center justify-between px-6 lg:px-10">
                     <button
                         onClick={() => scrollTo("home")}
@@ -177,7 +179,7 @@ export default function Home() {
                         href="https://drive.google.com/file/d/1lBlwcP7YcSJcGaBv-6gZaK8OFxzRYtL0/view?usp=sharing"
                         target="_blank"
                         rel="noreferrer"
-                        className="hidden rounded-full border border-white/15 px-5 py-2.5 text-sm transition hover:border-white/40 hover:bg-white hover:text-black md:block"
+                        className="hidden rounded-full border border-amber-500/40 px-5 py-2.5 text-sm transition hover:border-amber-400 hover:bg-amber-400 hover:text-black md:block"
                     >
                         Resume
                     </a>
@@ -192,7 +194,7 @@ export default function Home() {
                 </nav>
 
                 {menuOpen && (
-                    <div className="border-t border-white/[0.07] bg-[#08090b] px-6 py-5 md:hidden">
+                    <div className="border-t border-white/[0.15] bg-[#1a1815] px-6 py-5 md:hidden">
                         <MobileNavButton
                             label="About"
                             onClick={() => scrollTo("about")}
@@ -214,7 +216,7 @@ export default function Home() {
                             href="/Mohamed_Warith_Resume.pdf"
                             target="_blank"
                             rel="noreferrer"
-                            className="mt-3 block border-t border-white/[0.07] pt-4 text-sm text-white/60"
+                            className="mt-3 block border-t border-white/[0.15] pt-4 text-sm text-white/70"
                         >
                             Download Resume
                         </a>
@@ -228,20 +230,20 @@ export default function Home() {
                 className="mx-auto flex min-h-screen max-w-7xl items-center px-6 pb-20 pt-32 lg:px-10"
             >
                 <div className="w-full">
-                    <div className="mb-8 flex items-center gap-3 font-mono text-xs uppercase tracking-[0.25em] text-white/40">
-                        <span className="h-px w-8 bg-white/30" />
+                    <div className="mb-8 flex items-center gap-3 font-mono text-xs uppercase tracking-[0.25em] text-white/50">
+                        <span className="h-px w-8 bg-white/40" />
                         Software Engineer
                     </div>
 
                     <h1 className="max-w-6xl text-[clamp(4rem,12vw,10rem)] font-semibold leading-[0.82] tracking-[-0.075em]">
                         Mohamed
                         <br />
-                        <span className="text-white/[0.22]">Warith.</span>
+                        <span className="text-white/[0.35]">Warith.</span>
                     </h1>
 
                     <div className="mt-14 grid gap-12 lg:grid-cols-[1fr_auto] lg:items-end">
                         <div>
-                            <p className="max-w-2xl text-lg leading-8 text-white/50 md:text-xl">
+                            <p className="max-w-2xl text-lg leading-8 text-white/60 md:text-xl">
                                 Computer Science graduate who enjoys building software,
                                 solving hard problems, and understanding how systems work
                                 underneath the abstraction.
@@ -250,12 +252,12 @@ export default function Home() {
                             <div className="mt-8 flex flex-wrap gap-3">
                                 <button
                                     onClick={() => scrollTo("projects")}
-                                    className="group flex items-center gap-3 rounded-full bg-white px-6 py-3 text-sm font-medium text-black transition hover:bg-white/90"
+                                    className="group flex items-center gap-3 rounded-full bg-white px-6 py-3 text-sm font-medium text-black transition duration-300 hover:bg-white hover:shadow-lg hover:shadow-white/20"
                                 >
                                     View projects
                                     <ArrowDown
                                         size={16}
-                                        className="transition-transform group-hover:translate-y-1"
+                                        className="transition-transform duration-300 group-hover:translate-y-1"
                                     />
                                 </button>
 
@@ -263,7 +265,7 @@ export default function Home() {
                                     href="https://github.com/mwarith"
                                     target="_blank"
                                     rel="noreferrer"
-                                    className="flex items-center gap-2 rounded-full border border-white/15 px-6 py-3 text-sm text-white/70 transition hover:border-white/40 hover:text-white"
+                                    className="flex items-center gap-2 rounded-full border border-white/25 px-6 py-3 text-sm text-white/75 transition duration-300 hover:border-white/50 hover:bg-white/5 hover:text-white"
                                 >
                                     <Github size={16} />
                                     GitHub
@@ -271,32 +273,32 @@ export default function Home() {
                             </div>
                         </div>
 
-                        <div className="flex gap-10 border-l border-white/10 pl-8 lg:pb-2">
+                        <div className="flex gap-10 border-l border-white/20 pl-8 lg:pb-2">
                             <div>
                                 <p className="font-mono text-4xl tracking-tight">3×</p>
-                                <p className="mt-1 text-xs uppercase tracking-wider text-white/65">
+                                <p className="mt-1 text-xs uppercase tracking-wider text-white/70">
                                     ACPC Finalist
                                 </p>
                             </div>
 
                             <div>
                                 <p className="font-mono text-4xl tracking-tight">3.77</p>
-                                <p className="mt-1 text-xs uppercase tracking-wider text-white/65">
+                                <p className="mt-1 text-xs uppercase tracking-wider text-white/70">
                                     GPA / 4.0
                                 </p>
                             </div>
                         </div>
                     </div>
 
-                    <div className="mt-24 flex items-center gap-3 text-xs text-white/25">
-                        <span className="h-1.5 w-1.5 rounded-full bg-emerald-400/70" />
+                    <div className="mt-24 flex items-center gap-3 text-xs text-white/35">
+                        <span className="h-1.5 w-1.5 rounded-full bg-emerald-400" />
                         Cairo, Egypt
                     </div>
                 </div>
             </section>
 
             {/* About */}
-            <section id="about" className="border-t border-white/[0.07]">
+            <section id="about" className="border-t border-white/[0.15]">
                 <div className="mx-auto max-w-7xl px-6 py-28 lg:px-10">
                     <SectionHeader
                         number="01"
@@ -309,11 +311,11 @@ export default function Home() {
                             <p className="text-3xl font-medium leading-tight tracking-tight md:text-5xl">
                                 Strong fundamentals first.
                                 <br />
-                                <span className="text-white/25">Tools come second.</span>
+                                <span className="text-white/40">Tools come second.</span>
                             </p>
                         </div>
 
-                        <div className="space-y-6 text-base leading-8 text-white/50">
+                        <div className="space-y-6 text-base leading-8 text-white/60">
                             <p>
                                 I&apos;m a Computer Science graduate from Benha University with
                                 a strong foundation in algorithms, data structures, OOP,
@@ -334,7 +336,7 @@ export default function Home() {
                         </div>
                     </div>
 
-                    <div className="mt-24 grid border-l border-t border-white/[0.07] md:grid-cols-3">
+                    <div className="mt-24 grid border-l border-t border-white/[0.15] md:grid-cols-3">
                         <InfoCard
                             icon={<Server size={22} />}
                             title="Backend"
@@ -357,7 +359,7 @@ export default function Home() {
             </section>
 
             {/* Projects */}
-            <section id="projects" className="border-t border-white/[0.07]">
+            <section id="projects" className="border-t border-white/[0.15]">
                 <div className="mx-auto max-w-7xl px-6 py-28 lg:px-10">
                     <SectionHeader
                         number="02"
@@ -374,7 +376,7 @@ export default function Home() {
             </section>
 
             {/* Education */}
-            <section className="border-t border-white/[0.07]">
+            <section className="border-t border-white/[0.15]">
                 <div className="mx-auto max-w-7xl px-6 py-28 lg:px-10">
                     <SectionHeader
                         number="03"
@@ -382,10 +384,10 @@ export default function Home() {
                         description="Where I built the foundation."
                     />
 
-                    <div className="mt-16 flex flex-col gap-8 rounded-2xl border border-white/15 p-7 md:flex-row md:items-center md:justify-between md:p-10">
+                    <div className="mt-16 flex flex-col gap-8 rounded-2xl border border-white/20 bg-gradient-to-br from-white/[0.06] to-white/[0.02] p-7 shadow-lg shadow-white/5 md:flex-row md:items-center md:justify-between md:p-10">
                         <div className="flex gap-5">
-                            <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl border border-white/10">
-                                <GraduationCap size={22} className="text-white/60" />
+                            <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl border border-white/20">
+                                <GraduationCap size={22} className="text-white/70" />
                             </div>
 
                             <div>
@@ -393,16 +395,16 @@ export default function Home() {
                                     Bachelor in Computer Science
                                 </h3>
 
-                                <p className="mt-1 text-white/40">
+                                <p className="mt-1 text-white/55">
                                     Faculty of Computer and Artificial Intelligence
                                 </p>
 
-                                <p className="text-white/40">Benha University</p>
+                                <p className="text-white/55">Benha University</p>
                             </div>
                         </div>
 
                         <div className="md:text-right">
-                            <p className="font-mono text-sm text-white/40">
+                            <p className="font-mono text-sm text-white/55">
                                 SEP 2022 — JUN 2026
                             </p>
 
@@ -417,7 +419,7 @@ export default function Home() {
             {/* Achievements */}
             <section
                 id="achievements"
-                className="border-t border-white/[0.07]"
+                className="border-t border-white/[0.15]"
             >
                 <div className="mx-auto max-w-7xl px-6 py-28 lg:px-10">
                     <SectionHeader
@@ -440,10 +442,10 @@ export default function Home() {
                         />
                     </div>
 
-                    <div className="mt-6 rounded-2xl border border-white/15 p-8 md:p-10">
+                    <div className="mt-6 rounded-2xl border border-white/20 bg-gradient-to-br from-white/[0.06] to-white/[0.02] p-8 shadow-lg shadow-white/5 md:p-10">
                         <div className="flex items-start gap-5">
-                            <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl border border-white/10">
-                                <Users size={21} className="text-white/60" />
+                            <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl border border-white/20">
+                                <Users size={21} className="text-white/70" />
                             </div>
 
                             <div>
@@ -451,14 +453,14 @@ export default function Home() {
                                     ICPC Benha Community
                                 </h3>
 
-                                <p className="mt-3 max-w-2xl leading-7 text-white/45">
+                                <p className="mt-3 max-w-2xl leading-7 text-white/60">
                                     Mentored trainees in algorithms, data structures, and
                                     problem solving. Also contributed as a tester and judge for
                                     ECPC Qualifications and regional contests including MCPC
                                     2025 and PCPC 2025.
                                 </p>
 
-                                <p className="mt-5 font-mono text-xs text-white/30">
+                                <p className="mt-5 font-mono text-xs text-white/45">
                                     JUL 2024 — AUG 2026
                                 </p>
                             </div>
@@ -468,21 +470,21 @@ export default function Home() {
             </section>
 
             {/* Skills */}
-            <section className="border-t border-white/[0.07]">
+            <section className="border-t border-white/[0.15]">
                 <div className="mx-auto max-w-7xl px-6 py-28 lg:px-10">
                     <SectionHeader
                         number="05"
-                        title="Stack"
+                        title="Skills"
                         description="Technologies and concepts I work with."
                     />
 
-                    <div className="mt-16 grid border-l border-t border-white/[0.07] sm:grid-cols-2 lg:grid-cols-3">
+                    <div className="mt-16 grid border-l border-t border-white/[0.15] sm:grid-cols-2 lg:grid-cols-3">
                         {skills.map((skill) => (
                             <div
                                 key={skill.title}
-                                className="border-b border-r border-white/[0.07] p-7 md:p-9"
+                                className="border-b border-r border-white/[0.15] p-7 md:p-9"
                             >
-                                <p className="mb-7 font-mono text-xs uppercase tracking-[0.2em] text-white/30">
+                                <p className="mb-7 font-mono text-xs uppercase tracking-[0.2em] text-white/40">
                                     {skill.title}
                                 </p>
 
@@ -490,7 +492,7 @@ export default function Home() {
                                     {skill.items.map((item) => (
                                         <span
                                             key={item}
-                                            className="rounded-full border border-white/10 px-3 py-1.5 text-sm text-white/60 transition hover:border-white/25 hover:text-white"
+                                            className="rounded-full border border-white/20 bg-white/[0.03] px-3 py-1.5 text-sm text-white/70 transition duration-300 hover:border-white/40 hover:bg-white/[0.08] hover:text-white hover:shadow-sm hover:shadow-white/10"
                                         >
                                             {item}
                                         </span>
@@ -503,17 +505,17 @@ export default function Home() {
             </section>
 
             {/* Contact */}
-            <section id="contact" className="border-t border-white/[0.07]">
+            <section id="contact" className="border-t border-white/[0.15]">
                 <div className="mx-auto max-w-7xl px-6 py-32 lg:px-10">
                     <div className="max-w-5xl">
-                        <p className="mb-8 font-mono text-xs uppercase tracking-[0.25em] text-white/30">
+                        <p className="mb-8 font-mono text-xs uppercase tracking-[0.25em] text-white/40">
                             06 / Contact
                         </p>
 
                         <h2 className="text-[clamp(3.5rem,9vw,8rem)] font-semibold leading-[0.88] tracking-[-0.065em]">
                             Let&apos;s build
                             <br />
-                            <span className="text-white/[0.22]">something.</span>
+                            <span className="text-white/[0.35]">something.</span>
                         </h2>
 
                         <div className="mt-12 flex flex-wrap gap-3">
@@ -529,22 +531,22 @@ export default function Home() {
                                 href="https://www.linkedin.com/in/mwarith"
                                 target="_blank"
                                 rel="noreferrer"
-                                className="flex items-center gap-3 rounded-full border border-white/15 px-6 py-3 text-sm text-white/70 transition hover:border-white/40 hover:text-white"
+                                className="group flex items-center gap-3 rounded-full border border-white/25 px-6 py-3 text-sm text-white/75 transition duration-300 hover:border-white/50 hover:bg-white/5 hover:text-white"
                             >
                                 <Linkedin size={16} />
                                 LinkedIn
-                                <ArrowUpRight size={15} />
+                                <ArrowUpRight size={15} className="transition-transform duration-300 group-hover:translate-x-1 group-hover:-translate-y-1" />
                             </a>
 
                             <a
                                 href="https://github.com/mwarith"
                                 target="_blank"
                                 rel="noreferrer"
-                                className="flex items-center gap-3 rounded-full border border-white/15 px-6 py-3 text-sm text-white/70 transition hover:border-white/40 hover:text-white"
+                                className="group flex items-center gap-3 rounded-full border border-white/25 px-6 py-3 text-sm text-white/75 transition duration-300 hover:border-white/50 hover:bg-white/5 hover:text-white"
                             >
                                 <Github size={16} />
                                 GitHub
-                                <ArrowUpRight size={15} />
+                                <ArrowUpRight size={15} className="transition-transform duration-300 group-hover:translate-x-1 group-hover:-translate-y-1" />
                             </a>
                         </div>
                     </div>
@@ -552,8 +554,8 @@ export default function Home() {
             </section>
 
             {/* Footer */}
-            <footer className="border-t border-white/[0.07]">
-                <div className="mx-auto flex max-w-7xl flex-col gap-3 px-6 py-8 text-xs text-white/25 sm:flex-row sm:items-center sm:justify-between lg:px-10">
+            <footer className="border-t border-white/[0.15]">
+                <div className="mx-auto flex max-w-7xl flex-col gap-3 px-6 py-8 text-xs text-white/35 sm:flex-row sm:items-center sm:justify-between lg:px-10">
                     <span className="font-mono">MW.</span>
                     <span>© {new Date().getFullYear()} Mohamed Warith</span>
                 </div>
@@ -572,7 +574,7 @@ function NavButton({
     return (
         <button
             onClick={onClick}
-            className="text-sm text-white/50 transition hover:text-white"
+            className="text-sm text-white/60 transition duration-300 hover:text-white hover:border-b hover:border-white/30 pb-1"
         >
             {label}
         </button>
@@ -589,7 +591,7 @@ function MobileNavButton({
     return (
         <button
             onClick={onClick}
-            className="block w-full py-3 text-left text-sm text-white/60"
+            className="block w-full py-3 text-left text-sm text-white/70 transition duration-300 hover:text-white hover:border-l-2 hover:border-amber-400/50 hover:pl-2"
         >
             {label}
         </button>
@@ -608,14 +610,14 @@ function SectionHeader({
     return (
         <div className="flex flex-col justify-between gap-5 md:flex-row md:items-end">
             <div>
-                <p className="mb-3 font-mono text-xs text-white/25">{number}</p>
+                <p className="mb-3 font-mono text-xs font-semibold text-amber-400/70">{number}</p>
 
-                <h2 className="text-4xl font-semibold tracking-[-0.04em] md:text-6xl">
+                <h2 className="text-4xl font-semibold tracking-[-0.04em] md:text-6xl leading-tight">
                     {title}
                 </h2>
             </div>
 
-            <p className="max-w-xs text-sm leading-6 text-white/65">
+            <p className="max-w-xs text-sm leading-6 text-white/70">
                 {description}
             </p>
         </div>
@@ -632,12 +634,12 @@ function InfoCard({
     text: string;
 }) {
     return (
-        <div className="border-b border-r border-white/[0.07] p-8 last:border-r-0 md:border-b-0">
-            <div className="mb-7 text-white/50">{icon}</div>
+        <div className="border-b border-r border-white/[0.15] p-8 transition duration-300 hover:bg-white/[0.03] hover:border-white/[0.25] last:border-r-0 md:border-b-0">
+            <div className="mb-7 text-amber-400/70 transition duration-300">{icon}</div>
 
             <h3 className="text-lg font-medium">{title}</h3>
 
-            <p className="mt-2 text-sm leading-6 text-white/65">{text}</p>
+            <p className="mt-2 text-sm leading-6 text-white/70">{text}</p>
         </div>
     );
 }
@@ -653,31 +655,31 @@ function ProjectCard({
             target="_blank"
             rel="noreferrer"
             className={`group relative block overflow-hidden rounded-2xl border transition duration-500 ${project.featured
-                ? "border-white/15 bg-white/[0.055] hover:border-white/30"
-                : "border-white/[0.10] bg-[#15171b] hover:border-white/25 hover:bg-white/[0.035]"
+                ? "border-white/20 bg-gradient-to-br from-white/[0.08] to-white/[0.04] shadow-lg shadow-white/5 hover:border-white/40 hover:shadow-white/10"
+                : "border-white/[0.15] bg-gradient-to-br from-[#241f1b] to-[#1f1a16] shadow-md shadow-black/30 hover:border-white/30 hover:bg-gradient-to-br hover:from-[#241f1b] hover:to-[#1a1815] hover:shadow-white/10"
                 }`}
         >
             {project.featured && (
-                <div className="absolute right-6 top-6 rounded-full border border-white/15 bg-white/[0.05] px-3 py-1 font-mono text-[10px] uppercase tracking-widest text-white/55">
+                <div className="absolute right-6 top-6 rounded-full border border-amber-500/40 bg-amber-500/10 px-3 py-1 font-mono text-[10px] uppercase tracking-widest text-amber-400/80">
                     Featured
                 </div>
             )}
 
             <div className="grid gap-8 p-7 md:p-10 lg:grid-cols-[100px_1fr_auto]">
-                <span className="font-mono text-sm text-[#b8a47a]">
+                <span className="font-mono text-sm text-amber-500/80">
                     {project.number}
                 </span>
 
                 <div>
-                    <p className="mb-3 font-mono text-xs uppercase tracking-widest text-[#b8a47a]">
+                    <p className="mb-3 font-mono text-xs uppercase tracking-widest text-amber-500/80">
                         {project.subtitle}
                     </p>
 
-                    <h3 className="text-3xl font-medium tracking-tight text-white transition-colors group-hover:text-[#d8c79d] md:text-4xl">
+                    <h3 className="text-3xl font-medium tracking-tight text-white transition-colors group-hover:text-amber-400 md:text-4xl">
                         {project.title}
                     </h3>
 
-                    <p className="mt-5 max-w-2xl text-sm leading-7 text-white/60">
+                    <p className="mt-5 max-w-2xl text-sm leading-7 text-white/70">
                         {project.description}
                     </p>
 
@@ -685,14 +687,14 @@ function ProjectCard({
                         {project.technologies.map((technology) => (
                             <span
                                 key={technology}
-                                className="rounded-full border border-white/15 bg-white/[0.025] px-3 py-1.5 font-mono text-[11px] text-white/55"
+                                className="rounded-full border border-white/20 bg-white/[0.06] px-3 py-1.5 font-mono text-[11px] text-white/70 transition duration-300 hover:border-white/40 hover:bg-white/[0.1] hover:text-white"
                             >
                                 {technology}
                             </span>
                         ))}
                     </div>
 
-                    <div className="mt-8 flex items-center gap-2 text-sm text-white/45 transition-colors group-hover:text-white">
+                    <div className="mt-8 flex items-center gap-2 text-sm text-white/55 transition-colors duration-300 group-hover:text-white">
                         <Github size={16} />
                         View on GitHub
                         <ArrowUpRight
@@ -723,14 +725,14 @@ function CompetitionCard({
     rows: string[][];
 }) {
     return (
-        <div className="rounded-2xl border border-white/15 p-7 md:p-10">
-            <div className="flex h-12 w-12 items-center justify-center rounded-xl border border-white/10">
-                <Trophy size={21} className="text-white/60" />
+        <div className="rounded-2xl border border-white/20 bg-gradient-to-br from-white/[0.06] to-white/[0.02] p-7 shadow-lg shadow-white/5 md:p-10">
+            <div className="flex h-12 w-12 items-center justify-center rounded-xl border border-white/20 bg-white/[0.05]">
+                <Trophy size={21} className="text-amber-400/80" />
             </div>
 
             <h3 className="mt-7 text-3xl font-medium">{title}</h3>
 
-            <p className="mt-2 max-w-sm text-sm leading-6 text-white/65">
+            <p className="mt-2 max-w-sm text-sm leading-6 text-white/70">
                 {subtitle}
             </p>
 
@@ -738,9 +740,9 @@ function CompetitionCard({
                 {rows.map(([year, result]) => (
                     <div
                         key={year}
-                        className="flex items-center justify-between border-t border-white/[0.07] py-4"
+                        className="flex items-center justify-between border-t border-white/[0.15] py-4"
                     >
-                        <span className="font-mono text-sm text-white/30">
+                        <span className="font-mono text-sm text-white/45">
                             {year}
                         </span>
 
